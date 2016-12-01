@@ -58,7 +58,7 @@ fi
 
 mkdir $STACK_NAME
 
-arr_files=( $(ls $SCRIPT_PATH/templates/kubernetes) )
+arr_files=( $(ls $SCRIPT_PATH/kubernetes) )
 for i in ${arr_files[@]}
 do 
     echo "Generating ./$STACK_NAME/$i"
