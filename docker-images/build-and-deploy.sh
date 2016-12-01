@@ -22,7 +22,7 @@ done
 echo "Updating ${POD} $STACK_NAME, builded version ${VERSION}"
 docker build -t ${POD}:${VERSION} ./docker-images/${POD}
 
-ECR_TAG="${ECR_REPO}/${POD}:${VERSION}"
+ECR_TAG="${ECR_REPO}/docker-images/${POD}:${VERSION}"
 
 docker tag "${POD}:${VERSION}" "${ECR_TAG}"
 docker push "${ECR_TAG}"
