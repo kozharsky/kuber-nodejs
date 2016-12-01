@@ -27,7 +27,7 @@ spec:
         tier: frontend
     spec:
       containers:
-      - image: %ECR_REPO%/nodejs:latest
+      - image: %ECR_REPO%/docker-images/nodejs:latest
         name: %STACK_NAME%-nodejs
         ports:
         - containerPort: 8080
