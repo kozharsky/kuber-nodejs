@@ -3,7 +3,7 @@
 set -e
 
 for image in \
-        nodejs \
+        docker-images/nodejs \
     ; do
         docker build -t ${image} ./${image}
     done
