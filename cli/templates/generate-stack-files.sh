@@ -62,7 +62,7 @@ arr_files=( $(ls $SCRIPT_PATH/kubernates) )
 for i in ${arr_files[@]}
 do 
     echo "Generating ./$STACK_NAME/$i"
-    sed -e 's/%ECR_REPO%/'${ECR_REPO}'/g' -e 's/%STACK_NAME%/'${STACK_NAME}'/g' $SCRIPT_PATH/kubernates/$i > ./$STACK_NAME/$i
+    sed -e 's/%ECR_REPO%/'${ECR_REPO}/docker-images/'/g' -e 's/%STACK_NAME%/'${STACK_NAME}'/g' $SCRIPT_PATH/kubernates/$i > ./$STACK_NAME/$i
 done
 
 
