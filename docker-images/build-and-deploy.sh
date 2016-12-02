@@ -19,6 +19,8 @@ case $i in
 esac
 done
 
+eval $(aws ecr get-login --region ${REGION})
+
 echo "Updating ${POD} $STACK_NAME, builded version ${VERSION}"
 docker build -t ${POD}:${VERSION} ./docker-images/${POD}
 
