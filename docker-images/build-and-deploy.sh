@@ -20,7 +20,7 @@ esac
 done
 
 echo "Updating ${POD} $STACK_NAME, builded version ${VERSION}"
-docker build -t ${POD}:${VERSION} ./${POD}
+docker build -t ${POD}:${VERSION} ./docker-images/${POD}
 
 ECR_TAG="${ECR_REPO}/${POD}:${VERSION}"
 
