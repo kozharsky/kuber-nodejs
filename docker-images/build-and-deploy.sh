@@ -26,8 +26,8 @@ docker build -t ${POD}:${VERSION} ./docker-images/${POD}
 
 ECR_TAG="${ECR_REPO}/${POD}:${VERSION}"
 
-#docker tag "${POD}:${VERSION}" "${ECR_TAG}"
-#docker push "${ECR_TAG}"
+docker tag "${POD}:${VERSION}" "${ECR_TAG}"
+docker push "${ECR_TAG}"
 echo "ECR = ${ECR_TAG}"
 /usr/local/bin/kubectl set image deployment/${STACK_NAME}-${POD} ${STACK_NAME}-${POD}=${ECR_TAG}
 echo "/usr/local/bin/kubectl set image deployment/${STACK_NAME}-${POD} ${STACK_NAME}-${POD}=${ECR_TAG}"
