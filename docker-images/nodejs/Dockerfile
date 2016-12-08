@@ -6,9 +6,8 @@ WORKDIR /usr/src/app
 
 
 # Bundle app source
-COPY server.js /usr/src/app
-COPY test.js /usr/src/app
-COPY package.json /usr/src/app
+COPY project /usr/src/app
+
 RUN npm test
 
 EXPOSE 8080
